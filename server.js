@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 //remember that this is your connection string.
 //we will change this later
 if(typeof process.env.MONGODB_URI !== 'undefined' && process.env.MONGODB_URI.length > 0){
-  
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 }else{
   mongoose.connect("mongodb://localhost/testmern", { useNewUrlParser: true });
 }
